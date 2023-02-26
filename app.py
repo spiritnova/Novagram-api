@@ -5,11 +5,11 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import uuid as uuid
 from datetime import datetime
 from sqlalchemy import MetaData
-from flask_cors import CORS, cross_origin
+from flask_cors import cross_origin
 
 
 app = Flask(__name__)
-CORS(app, resources={r'*': {'origins': 'https://novagram.vercel.app/'}})
+# CORS(app, resources={r'*': {'origins': 'https://novagram.vercel.app/'}})
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
 app.app_context().push()
