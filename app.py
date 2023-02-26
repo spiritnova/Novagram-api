@@ -9,7 +9,7 @@ from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r'*': {'origins': 'https://novagram.vercel.app/'}})
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
 app.app_context().push()
@@ -322,7 +322,7 @@ def getPosts(username):
         "count": postCount,
         })
 
-@app.route("/post/<id>", methods=["get"])
+@app.route("/post/<id>")
 @cross_origin()
 def getPost(id):
     comments = []
