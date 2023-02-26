@@ -589,6 +589,8 @@ def search(value):
                     "picture": user.picture
                 }
                 usersList.append(data)
+        else:
+            usersList.append({ "error" : "No search results found" })
 
     return usersList , 200
 
