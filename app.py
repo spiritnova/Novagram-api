@@ -9,7 +9,6 @@ from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
-CORS(app, resources={r'*': {'origins': 'https://novagram.vercel.app/'}})
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
 app.app_context().push()
