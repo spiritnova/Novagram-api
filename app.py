@@ -594,13 +594,6 @@ def search(value):
 
     return usersList , 200
 
-@app.route("/test")
-@cross_origin()
-def test():
-    return ({
-        "test": "test 1"
-        })
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
     
