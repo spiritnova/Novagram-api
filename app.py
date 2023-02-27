@@ -5,7 +5,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import uuid as uuid
 from datetime import datetime
 from sqlalchemy import MetaData
-from flask_cors import CORS, cross_origin
+from flask_cors import cross_origin
+from sqlalchemy import exc
 
 
 app = Flask(__name__)
@@ -227,10 +228,14 @@ def post():
     user = Users.query.filter_by(username = username).first()
 
     if picture:
-        post = Posts(user_id = user.id, image=picture, caption=caption)
-        db.session.add(post)
-        db.session.commit()
-
+        if caption:
+            post = Posts(user_id = user.id, image=picture, caption=caption)
+            db.session.add(post)
+            db.session.commit()
+        else:
+            post = Posts(user_id = user.id, image=picture)
+            db.session.add(post)
+            db.session.commit()
 
     return({"success" : 200,})
 
@@ -582,7 +587,7 @@ def search(value):
 
     for user in users:
         if value != '':
-            if value in user.username.lower():
+            if value.lower() in user.username.lower():
                 data = {
                     "username": user.username,
                     "name": user.name,
@@ -594,6 +599,11 @@ def search(value):
 
     return usersList , 200
 
+@app.errorhandler(exc.SQLAlchemyError)
+def handle_db_exceptions(error):
+    #log the error: app.logger.error(error)
+    db.session.rollback()
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
     
