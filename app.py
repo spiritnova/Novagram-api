@@ -265,18 +265,24 @@ def edit():
     user = Users.query.filter_by(username = user_username).first()  
     getUser = Users.query.filter_by(username=username).first()
 
+    print(user, getUser)
+
 
     if getUser.username != user.username:
+        print("username is not the same")
         if getUser is None:
+            print("username does not exist in the db")
             user.username = username
             user.name = name
             user.bio = bio
             user.email = email
             db.session.commit()
         else:
+            print("username exists in the db")
             errors["username"] = "username already exists"
             return errors, 400
 
+    print("username is the same")
     user.name = name
     user.bio = bio
     user.email = email
@@ -386,7 +392,6 @@ def getPost(id):
 def setPfp():
     image = request.json.get("image")
 
-    print(image)
     username = request.json.get("username")
 
     user = Users.query.filter_by(username = username).first()
