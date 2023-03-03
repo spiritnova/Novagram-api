@@ -11,7 +11,6 @@ from sqlalchemy import exc
 
 app = Flask(__name__)
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
-cors = CORS(app, resources={r"/": {"origins": "novagram.vercel.app"}})
 
 app.app_context().push()
 
@@ -93,6 +92,8 @@ class Likes(db.Model):
     user_id = db.Column(db.Integer, nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey(Posts.post_id))
     comment_id = db.Column(db.Integer, db.ForeignKey(Comment.id))
+
+
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -266,22 +267,17 @@ def edit():
     user = Users.query.filter_by(username = user_username).first()  
     getUser = Users.query.filter_by(username=username).first()
 
-    print(user, getUser)
+    
+    if getUser is None:
+        user.username = username
+        user.name = name
+        user.bio = bio
+        user.email = email
+        db.session.commit()
+    else:
+        errors["username"] = "username already exists"
+        return errors, 400
 
-
-    if getUser.username != user.username:
-        print("username is not the same")
-        if getUser is None:
-            print("username does not exist in the db")
-            user.username = username
-            user.name = name
-            user.bio = bio
-            user.email = email
-            db.session.commit()
-        else:
-            print("username exists in the db")
-            errors["username"] = "username already exists"
-            return errors, 400
 
     print("username is the same")
     user.name = name
