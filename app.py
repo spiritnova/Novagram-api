@@ -216,7 +216,7 @@ def login():
         "picture": user.picture,
         "bio": user.bio,
         "email": user.email
-        })
+    })
 
 @app.route("/profile", methods=["POST", "GET"])
 @cross_origin()
@@ -319,6 +319,7 @@ def getPosts(username):
                 "id": post.post_id,
                 "image": post.image,
                 "caption": post.caption,
+                "likes": post.likes
             }
             posts.append(data)
 
