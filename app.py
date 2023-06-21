@@ -169,7 +169,7 @@ def register():
 
     if errors:
         return errors, 400
-
+    print(name, username, password)
 
     # CHECK IF USERNAME ALREADY EXISTS IN THE DATABASE
 
