@@ -15,7 +15,7 @@ app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 app.app_context().push()
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///novagram.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql7600856:2KGKqCNgfD@sql7.freemysqlhosting.net:3306/sql7600856'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql8627639:2TS2rCxmsT@sql8.freemysqlhosting.net:3306/sql8627639'
 
 
 convention = {
