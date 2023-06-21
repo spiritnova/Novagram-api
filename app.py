@@ -9,6 +9,14 @@ from flask_cors import CORS, cross_origin
 from sqlalchemy import exc
 
 
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="sql8.freemysqlhosting.net",
+    user="sql8627639",
+    passwd="2TS2rCxmsT",
+)
+
 app = Flask(__name__)
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
