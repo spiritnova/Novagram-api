@@ -334,12 +334,12 @@ def getPosts(username):
             }
             posts.append(data)
 
-    postCount = len(posts)
+        postCount = len(posts)
 
-    return ({
-        "posts": posts,
-        "count": postCount,
-        })
+        return ({
+            "posts": posts,
+            "count": postCount,
+            })
 
 @app.route("/post/<id>")
 @cross_origin()
