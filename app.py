@@ -26,7 +26,7 @@ app.app_context().push()
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///novagram.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql8627639:2TS2rCxmsT@sql8.freemysqlhosting.net:3306/sql8627639'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://bobroot:zYrpG*q~#E0$@160.153.129.209/bob'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://bobroot:zYrpG*q~#E0$@160.153.129.209:3306/bob'
 
 
 convention = {
