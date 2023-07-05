@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\I\Desktop\React course\Novagram\api\venv"
+VIRTUAL_ENV="C:\Users\hb4q4-it1\Desktop\Ibrahim\Novagram-api\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

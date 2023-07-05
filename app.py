@@ -12,9 +12,9 @@ from sqlalchemy import exc
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="sql8.freemysqlhosting.net",
-    user="sql8627639",
-    passwd="2TS2rCxmsT",
+    host="160.153.129.209",
+    user="bobroot",
+    passwd="zYrpG*q~#E0$",
 )
 
 app = Flask(__name__)
@@ -23,7 +23,8 @@ app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 app.app_context().push()
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///novagram.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql8627639:2TS2rCxmsT@sql8.freemysqlhosting.net:3306/sql8627639'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql8627639:2TS2rCxmsT@sql8.freemysqlhosting.net:3306/sql8627639'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://bobroot:zYrpG*q~#E0$@160.153.129.209/bob'
 
 
 convention = {
