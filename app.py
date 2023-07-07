@@ -311,8 +311,9 @@ def getPosts(username):
 
     user = Users.query.filter_by(username = username).first() # Get the user from the 
     
+    print(f"TESTING IF {user} exist")
     if not user:
-        return "Not Found", 404
+        return ({"error" : "User not found"})
 
     if user: # If the user exists
         getPosts = Posts.query.filter_by(user_id = user.id).all()
@@ -327,12 +328,12 @@ def getPosts(username):
             }
             posts.append(data)
 
-        postCount = len(posts)
+    postCount = len(posts)
 
-        return ({
-            "posts": posts,
-            "count": postCount,
-            })
+    return ({
+        "posts": posts,
+        "count": postCount,
+        })
 
 @app.route("/post/<id>")
 @cross_origin()
