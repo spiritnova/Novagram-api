@@ -1,9 +1,10 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="sql8.freemysqlhosting.net",
-    user="sql8627639",
-    passwd="2TS2rCxmsT",
+    host="160.153.129.209",
+    user="bobroot",
+    password="zYrpG*q~#E0$",
+    port = 3306
 )
 db = mydb.cursor()
 
