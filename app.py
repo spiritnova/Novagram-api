@@ -17,7 +17,7 @@ CORS(app)
 app.app_context().push()
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///novagram.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://ui6rpmktcf0dxwqu:rqAGgYZgfErNY9x43zg7@bfyhrjhms04ghqi87jah-mysql.services.clever-cloud.com:3306/bfyhrjhms04ghqi87jah'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ui6rpmktcf0dxwqu:rqAGgYZgfErNY9x43zg7@bfyhrjhms04ghqi87jah-mysql.services.clever-cloud.com:3306/bfyhrjhms04ghqi87jah'
 
 
 convention = {
