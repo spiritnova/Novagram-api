@@ -1,9 +1,9 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="160.153.129.209",
-    user="bobroot",
-    password="zYrpG*q~#E0$",
+    host="bfyhrjhms04ghqi87jah-mysql.services.clever-cloud.com",
+    user="ui6rpmktcf0dxwqu",
+    password="rqAGgYZgfErNY9x43zg7",
     port = 3306
 )
 db = mydb.cursor()

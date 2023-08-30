@@ -14,12 +14,10 @@ app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
 CORS(app)
 
-
 app.app_context().push()
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///novagram.db'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql8627639:2TS2rCxmsT@sql8.freemysqlhosting.net:3306/sql8627639'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://bobroot:zYrpG*q~#E0$@160.153.129.209:3306/bob'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://ui6rpmktcf0dxwqu:rqAGgYZgfErNY9x43zg7@bfyhrjhms04ghqi87jah-mysql.services.clever-cloud.com:3306/bfyhrjhms04ghqi87jah'
 
 
 convention = {
@@ -612,4 +610,3 @@ def handle_db_exceptions(error):
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-    
