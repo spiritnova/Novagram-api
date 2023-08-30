@@ -14,6 +14,8 @@ import os
 app = Flask(__name__)
 app.secret_key = "fksf-r1f1-1fjgk-fasrfsh:2454"
 
+
+os.system("python")
 os.system("from app import db")
 os.system("db.create_all()")
 
